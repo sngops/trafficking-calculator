@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trafficking Task Complexity</title>
+</head>
+<body>
+  <h1>Trafficking Task Complexity Checker</h1>
+  <label>Placements: <input id="placements" type="number" /></label><br />
+  <label>Creatives: <input id="creatives" type="number" /></label><br />
+  <button onclick="calculate()">Check Complexity</button>
+  <p id="result"></p>
+
+  <script>
+    function calculate() {
+      const p = parseInt(document.getElementById('placements').value);
+      const c = parseInt(document.getElementById('creatives').value);
+      let result = '';
+
+      if (p <= 5 && c <= 2) {
+        result = 'Small';
+      } else if (p <= 10 && c <= 5) {
+        result = 'Medium';
+      } else {
+        result = 'Large';
+      }
+
+      document.getElementById('result').innerText = `This is a ${result} trafficking task.`;
+    }
+  </script>
+</body>
+</html>
